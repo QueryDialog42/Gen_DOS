@@ -1,6 +1,3 @@
-using System;
-using System.Security.Cryptography;
-
 namespace Gen_DOS{
     public static class MainClass{
         public static string currentDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -10,7 +7,7 @@ namespace Gen_DOS{
         private static string? val;
         private static string? val2;
         public static void Main(string[] args){
-            Console.WriteLine("using Gen_DOS version 1.0.0");
+            Console.WriteLine("using Gen_DOS version 5.1.0");
             Directory.SetCurrentDirectory(currentDirectory);
             do{
                 Console.Write($"{currentDirectory} ");

@@ -1,10 +1,4 @@
-using System;
-using System.Windows;
-using System.IO;
-using System.Linq.Expressions;
 using System.Text;
-using Microsoft.VisualBasic;
-using System.Formats.Asn1;
 using System.Diagnostics;
 
 namespace Gen_DOS{
@@ -29,7 +23,7 @@ namespace Gen_DOS{
         public static void write(string filename){
             if (!filename.EndsWith(".txt") && !filename.EndsWith(".rtf")){
                 Console.WriteLine($"{filename} is not a text file and it can be corrupted after write.\nDo you want to continue? [y] [N]");
-                if (Char.TryParse(Console.ReadLine().ToLower(), out char response) && response.Equals('y')){
+                if (Char.TryParse(Console.ReadLine()?.ToLower(), out char response) && response.Equals('y')){
                       writeProcess(filename);  
                 }
                 else{
@@ -45,7 +39,7 @@ namespace Gen_DOS{
             try{
                 if (!filename.EndsWith(".txt") && !filename.EndsWith(".rtf")){
                     Console.WriteLine($"{filename} is not a readable text file or might be corrupted.\nDo you want to continue? [y] [N]");
-                    if(Char.TryParse(Console.ReadLine().ToLower(), out char response) && response.Equals('y')){
+                    if(Char.TryParse(Console.ReadLine()?.ToLower(), out char response) && response.Equals('y')){
                         Console.WriteLine(File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), filename)));
                     }
                     else{
